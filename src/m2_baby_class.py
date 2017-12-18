@@ -2,8 +2,8 @@
 A   Baby   class and methods that use the Baby class.
 
 Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Fuyue Li.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 
 def main():
@@ -39,7 +39,7 @@ def main():
 
 
 # ----------------------------------------------------------------------
-# TODO: 2. Implement a class called   Baby   that has a constructor and
+# DONE: 2. Implement a class called   Baby   that has a constructor and
 #   two methods, as described below.  Your finished Baby class should
 #   cause the code above to display the expected output.  Hint: Your
 #   class will need instance variables that you must figure out.
@@ -89,11 +89,29 @@ def main():
 #          """ Brief description of what objects of the class 'are'. """
 #
 ########################################################################
+class Baby(object):
+    """ Represents a Baby string. """
 
+    def __init__(self, baby_name):
+        """ Prints 'Hello baby <your baby's name>!' """
+        self.name = baby_name
+        self.time = 0
+        print('Hello baby ' + baby_name + '!')
 
+    def feed_baby(self):
+        """" Prints 'Thank you for feeding baby <your baby's name>.' """
+        self.time = 0
+        print('Thank you for feeding baby', self.name + '.')
 
-
-
+    def hour_passes(self):
+        """" Prints the string according to the time this function is called. """
+        self.time += 1
+        if self.time == 1:
+            print('Baby ' + self.name + ' is sleeping.')
+        elif self.time == 2:
+            print('Baby ' + self.name + ' is awake. Time for food.')
+        else:
+            print('Baby ' + self.name + ' is CRYING uncontrollably! Feed the Baby!')
 
 
 # ----------------------------------------------------------------------
